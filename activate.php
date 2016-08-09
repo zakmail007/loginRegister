@@ -4,7 +4,6 @@ require('includes/config.php');
 //collect values from the url
 $memberID = trim($_GET['x']);
 $active = trim($_GET['y']);
-
 //if id is number and the active token is not empty carry on
 if(is_numeric($memberID) && !empty($active)){
 

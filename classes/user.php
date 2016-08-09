@@ -22,12 +22,27 @@ class User extends Password{
 		    echo '<p class="bg-danger">'.$e->getMessage().'</p>';
 		}
 	}
+	
+	private function validate_user($username,$password){
+
+		try {
+			$stmt = $this->_db->prepare('SELECT password, username, memberID FROM members WHERE username = :username AND password = :password AND active="Yes" ');
+			$stmt->execute(array('username' => $username,
+				':password' => $password));
+
+			return $stmt->fetch();
+
+		} catch(PDOException $e) {
+		    echo '<p class="bg-danger">'.$e->getMessage().'</p>';
+		}
+	}
 
 	public function login($username,$password){
 
-		$row = $this->get_user_hash($username);
+		$row = $this->validate_user($username,$password);
 
-		if($this->password_verify($password,$row['password']) == 1){
+		//if($this->password_verify($password,$row['password']) == 1){
+		if(!empty($row)){
 
 		    $_SESSION['loggedin'] = true;
 		    $_SESSION['username'] = $row['username'];

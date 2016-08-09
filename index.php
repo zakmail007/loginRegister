@@ -51,10 +51,12 @@ if(isset($_POST['submit'])){
 	if(!isset($error)){
 
 		//hash the password
-		 $hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
+		 //$hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
+		 $hashedpassword = $_POST['password'];
 
 		//create the activasion code
 		$activasion = md5(uniqid(rand(),true));
+		//$activasion = 'Yes';
 
 		try {
 
@@ -71,7 +73,7 @@ if(isset($_POST['submit'])){
 			//send email
 			$to = $_POST['email'];
 			$subject = "Registration Confirmation";
-			$body = "<p>Thank you for registering at demo site.</p>
+			$body = "<p><b>Registration Confirmation</b></p><p>Thank you for registering at demo site.</p>
 			<p>To activate your account, please click on this link: <a href='".DIR."activate.php?x=$id&y=$activasion'>".DIR."activate.php?x=$id&y=$activasion</a></p>
 			<p>Regards Site Admin</p>";
 
@@ -83,7 +85,7 @@ if(isset($_POST['submit'])){
 			$mail->send();
 
 			//redirect to index page
-			header('Location: index.php?action=joined');
+			header('Location: confirm.php?confirm_code='.$activasion.'&id='.$id);
 			exit;
 
 		//else catch the exception and show the error.

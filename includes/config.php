@@ -12,7 +12,7 @@ define('DBPASS','');
 define('DBNAME','loginregister');
 
 //application address
-define('DIR','localhost:84/loginregister');
+define('DIR','http://10.77.200.36:84/loginregister');
 define('SITEEMAIL','noreply@domain.com');
 
 try {

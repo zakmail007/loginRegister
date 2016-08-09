@@ -10,7 +10,6 @@ if(isset($_POST['submit'])){
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	
 	if($user->login($username,$password)){ 
 		$_SESSION['username'] = $username;
 		header('Location: memberpage.php');
