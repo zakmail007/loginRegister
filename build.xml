@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="loginRegister" default="full-build">
+<project name="loginRegister" default="clean">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="pdepend" value="/home/jenkins/vendor/bin/pdepend"/>
  <property name="phpcpd"  value="/home/jenkins/vendor/bin/phpcpd"/>
@@ -8,8 +8,6 @@
  <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
  <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
 
-
- 
 
  <target name="clean"
          unless="clean.done"
