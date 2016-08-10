@@ -61,21 +61,6 @@
   <property name="prepare.done" value="true"/>
  </target>
 
- <target name="lint"
-         unless="lint.done"
-         description="Perform syntax check of sourcecode files">
-  <apply executable="php" taskname="lint">
-   <arg value="-l" />
-
-   <fileset dir="${basedir}/src">
-    <include name="**/*.php" />
-    <modified />
-   </fileset>
-
-  </apply>
-
-  <property name="lint.done" value="true"/>
- </target>
 
  <target name="phploc"
          unless="phploc.done"
