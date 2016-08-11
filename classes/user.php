@@ -3,6 +3,7 @@ include('password.php');
 class User extends Password{
 
     private $_db;
+	private $balls;
 
     function __construct($db){
     	parent::__construct();
@@ -59,6 +60,19 @@ class User extends Password{
 		if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 			return true;
 		}
+	}
+	public function setGumballs($amount)
+	{
+		return $this->balls = $amount;
+	}
+	public function getGumballs()
+	{
+		return $this->balls;
+	}
+	
+	public function turnWheel($amount)
+	{
+		return $amt = $amount - 1;
 	}
 
 }

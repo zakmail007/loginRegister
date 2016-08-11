@@ -30,6 +30,16 @@
   <property name="prepare.done" value="true"/>
  </target>
 
+ <target name="phpunit"
+         unless="phpunit.done"
+         depends="prepare"
+         description="Run unit tests with PHPUnit">
+  <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+   <arg value="--configuration"/>
+   <arg path="${basedir}/build.phpunit.xml"/>
+  </exec>
+
+ 
  <target name="-check-failure">
   <fail message="PHPUnit did not finish successfully">
    <condition>
