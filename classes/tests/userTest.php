@@ -1,5 +1,5 @@
 <?php
-require ('./user.php');
+require ('../user.php');
 class UserTest extends PHPUnit_Framework_TestCase{
 
 	private $testValue;
