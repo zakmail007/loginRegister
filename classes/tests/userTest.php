@@ -1,5 +1,5 @@
 <?php
-require dirname(__FILE__) . 'classes/user.php';
+require dirname(__FILE__) . 'user.php';
 class UserTest extends PHPUnit_Framework_TestCase{
 
 	private $testValue;
