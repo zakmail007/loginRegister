@@ -23,7 +23,7 @@ try {
 
 } catch(PDOException $e) {
 	//show error
-    echo '<p class="bg-danger">'.$e->getMessage().'</p>';
+    echo '<p class="bg-dangerz">'.$e->getMessage().'</p>';
     exit;
 }
 
