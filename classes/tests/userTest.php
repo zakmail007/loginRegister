@@ -15,15 +15,5 @@ class UserTest extends PHPUnit_Framework_TestCase{
         $user->setGumballs(100);
 		$this->assertEquals(99, $user->turnWheel(100));
     }
-	public function testLogin()
-    {
-        $this->assertEquals(99, $user->turnWheel(100));
-    }
-	
-
-	
-
 }
-
-
 ?>
