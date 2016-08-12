@@ -5,11 +5,11 @@ class User extends Password{
     private $_db;
 	private $balls;
 
-    function __construct($db){
-    	parent::__construct();
+    // function __construct($db){
+    	// parent::__construct();
 
-    	$this->_db = $db;
-    }
+    	// $this->_db = $db;
+    // }
 
 	private function get_user_hash($username){
 
