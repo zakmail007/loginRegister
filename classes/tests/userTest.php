@@ -1,5 +1,6 @@
 <?php
-require dirname(__FILE__) . 'user.php';
+//require dirname(__FILE__) . 'user.php';
+require '/var/lib/jenkins/workspace/CaseStudyBuildAnt/classes/user.php';
 class UserTest extends PHPUnit_Framework_TestCase{
 
 	private $testValue;
