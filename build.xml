@@ -7,6 +7,9 @@
  <property name="phploc"  value="/home/jenkins/vendor/bin/phploc"/>
  <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
  <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
+ <property name="folder-to-zip" value="classes" /> 
+ <property name="base-dir" value="CaseStudyBuildAnt" />
+ 
 
 
  <target name="clean"
@@ -50,6 +53,6 @@
   </fail>
  </target>
  <target name="loginRegister" depends="phpunit" description="Deploy application as a ZIP file">
-	<zip destfile="/var/lib/jenkins/workspace/${CaseStudyBuildAnt}.zip" basedir="/var/lib/jenkins/workspace/CaseStudyBuildAnt" excludes="dont*.*"/>
+	<zip destfile="${abc}.zip" basedir="${folder-to-zip}"/>
 </target>
 </project>
