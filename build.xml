@@ -21,7 +21,7 @@
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/> 
-  <echo message="build file from"/>
+  <echo message="Zip file building..."/>
   <zip destfile="${base-dir}${filename}.zip" basedir="${folder-to-zip}"/>  
  </target>
  
