@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="loginRegister" default="clean">
+<project name="loginRegister" basedir="." default="clean">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="pdepend" value="/home/jenkins/vendor/bin/pdepend"/>
  <property name="phpcpd"  value="/home/jenkins/vendor/bin/phpcpd"/>
@@ -7,8 +7,9 @@
  <property name="phploc"  value="/home/jenkins/vendor/bin/phploc"/>
  <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
  <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
- <property name="folder-to-zip" value="classes" /> 
+ <property name="folder-to-zip" value="/var/lib/jenkins/workspace/CaseStudyBuildAnt" /> 
  <property name="base-dir" value="CaseStudyBuildAnt" />
+ <property name="filename" value="CaseStudyBuildzip" />
  
 
 
@@ -35,7 +36,7 @@
 
  <target name="loginRegister">
   <echo message="build file from"/>
-  <zip destfile="${abc}.zip" basedir="${folder-to-zip}"/>
+  <zip destfile="${filename}.zip" basedir="${folder-to-zip}"/>
  </target>
  
  <target name="phpunit"
