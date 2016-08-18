@@ -13,7 +13,7 @@ class UserTest extends PHPUnit_Framework_TestCase{
 	public function testRegistrationLogin()
     {
         $this->testValue->setGumballs(100);
-		$this->testValue->login('zxxcc','zxxcc');
+		$this->testValue->passLength('zx');
 		$this->assertEquals(99, $this->testValue->turnWheel(100));
     }
 }

@@ -17,8 +17,19 @@ if(isset($_POST['submit'])){
 			$error[] = 'Username provided is already in use.';
 		}
 
+	}	
+	if($user->passLength($_POST['password'])){
+		$error[] = 'Password is too short.';
 	}
 
+	if(strlen($_POST['passwordConfirm']) < 3){
+		$error[] = 'Confirm password is too short.';
+	}
+
+	if($_POST['password'] != $_POST['passwordConfirm']){
+		$error[] = 'Passwords do not match.';
+	}
+	/*
 	if(strlen($_POST['password']) < 3){
 		$error[] = 'Password is too short.';
 	}
@@ -30,6 +41,7 @@ if(isset($_POST['submit'])){
 	if($_POST['password'] != $_POST['passwordConfirm']){
 		$error[] = 'Passwords do not match.';
 	}
+	*/
 
 	//email validation
 	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){

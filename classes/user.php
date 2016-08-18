@@ -38,6 +38,12 @@ class User extends Password{
 			return true;
 		}
 	}
+	public function passLength($pass)
+	{
+		if(strlen($pass) < 3){
+			return true;
+		}
+	}
 	public function setGumballs($amount)
 	{
 		return $this->balls = $amount;
