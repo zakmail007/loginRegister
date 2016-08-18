@@ -22,12 +22,16 @@
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/>  
  </target>
-
+ 
+ <target name="loginRegister">
+  <echo message="build file from"/>
+  <zip destfile="${filename}.zip" basedir="${folder-to-zip}"/>
+ </target>
+ 
  <target name="prepare"
          unless="prepare.done"
          depends="clean"
          description="Prepare for build">
-  <echo message="Zaheererrrryyy"/>
   <mkdir dir="${basedir}/build/api"/>
   <mkdir dir="${basedir}/build/coverage"/>
   <mkdir dir="${basedir}/build/logs"/>
