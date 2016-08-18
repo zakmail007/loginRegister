@@ -33,6 +33,11 @@
   <property name="prepare.done" value="true"/>
  </target>
 
+ <target name="loginRegister">
+  <echo message="build file from"/>
+  <zip destfile="${abc}.zip" basedir="${folder-to-zip}"/>
+ </target>
+ 
  <target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
@@ -52,8 +57,4 @@
    </condition>
   </fail>
  </target>
- <target name="loginRegister">
-	<echo message="build file from"/>
-	<zip destfile="${abc}.zip" basedir="${folder-to-zip}"/>
-</target>
 </project>
