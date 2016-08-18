@@ -16,7 +16,7 @@ class UserTest extends PHPUnit_Framework_TestCase{
 		$this->testValue->turnWheel(100);
 		$this->assertEquals(99, $this->testValue->turnWheel(100));
 		$this->testValue->passLength('zx');
-		//$this->assertTrue($this->testValue->passLength('zx'));
+		$this->assertTrue($this->testValue->passLength('zx'));
 
     }
 }
