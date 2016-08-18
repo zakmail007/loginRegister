@@ -52,7 +52,7 @@
    </condition>
   </fail>
  </target>
- <target name="loginRegister" depends="zip">
+ <target name="loginRegister" depends="phpunit">
 	<echo message="${folder-to-zip} build file from"/>
 	<zip destfile="${abc}.zip" basedir="${folder-to-zip}"/>
 </target>
