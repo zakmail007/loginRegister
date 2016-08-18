@@ -50,7 +50,7 @@
   </fail>
  </target>
  <target name="loginRegister" depends="phpunit" description="Deploy application as a ZIP file">
-  <zip destfile="${CaseStudyBuildAnt}.zip"
+  <zip destfile="/var/lib/jenkins/workspace/${CaseStudyBuildAnt}.zip"
        basedir="/var/lib/jenkins/workspace/CaseStudyBuildAnt"
   />
 </target>
