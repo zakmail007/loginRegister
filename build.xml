@@ -20,14 +20,14 @@
   <delete dir="${basedir}/build/coverage"/>
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
-  <property name="clean.done" value="true"/>
-  <echo message="Zaheererrrr"/>
+  <property name="clean.done" value="true"/>  
  </target>
 
  <target name="prepare"
          unless="prepare.done"
          depends="clean"
          description="Prepare for build">
+  <echo message="Zaheererrrryyy"/>
   <mkdir dir="${basedir}/build/api"/>
   <mkdir dir="${basedir}/build/coverage"/>
   <mkdir dir="${basedir}/build/logs"/>
