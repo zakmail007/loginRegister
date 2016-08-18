@@ -49,7 +49,7 @@
    </condition>
   </fail>
  </target>
- <target name="deployzip" depends="build" description="Deploy application as a ZIP file">
+ <target name="loginRegister" depends="build" description="Deploy application as a ZIP file">
   <zip destfile="/var/lib/jenkins/workspace/devOpsCaseStudy.zip"
        basedir="/var/lib/jenkins/workspace/CaseStudyBuildAnt"
   />
