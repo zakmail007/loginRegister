@@ -8,7 +8,7 @@
  <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
  <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
  <property name="folder-to-zip" value="/var/lib/jenkins/workspace/CaseStudyBuildAnt" /> 
- <property name="base-dir" value="CaseStudyBuildAnt" />
+ <property name="base-dir" value="/var/lib/jenkins/workspace/" />
  <property name="filename" value="CaseStudyBuildzip" />
  
 
@@ -22,7 +22,7 @@
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/> 
   <echo message="build file from"/>
-  <zip destfile="./${filename}.zip" basedir="${folder-to-zip}"/>  
+  <zip destfile="${base-dir}${filename}.zip" basedir="${folder-to-zip}"/>  
  </target>
  
  
