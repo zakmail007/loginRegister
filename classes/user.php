@@ -44,6 +44,13 @@ class User extends Password{
 			return true;
 		}
 	}
+	
+	public function passMatch($pass, $confirmPass)
+	{
+		if($pass != $confirmPass){
+			return true;
+		}
+	}
 	public function setGumballs($amount)
 	{
 		return $this->balls = $amount;
