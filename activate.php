@@ -8,12 +8,8 @@ $active = trim($_GET['y']);
 if(is_numeric($memberID) && !empty($active)){
 
 	//update users record set the active column to Yes where the memberID and active value match the ones provided in the array
-	$stmt = $db->prepare("UPDATE members SET active = 'Yes' WHERE memberID = :memberID AND active = :active");
-	$stmt->execute(array(
-		':memberID' => $memberID,
-		':active' => $active
-	));
-
+	$stmt = mysql_query("UPDATE members SET active = 'Yes' WHERE memberID = '.$memberID.' AND active = '".$active."'");
+	
 	//if the row was updated redirect the user
 	if($stmt->rowCount() == 1){
 

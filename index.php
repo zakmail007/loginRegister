@@ -10,9 +10,8 @@ if(isset($_POST['submit'])){
 	if(strlen($_POST['username']) < 3){
 		$error[] = 'Username is too short.';
 	} else {
-		$stmt = $db->prepare('SELECT username FROM members WHERE username = :username');
-		$stmt->execute(array(':username' => $_POST['username']));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$stmt = mysql_query('SELECT username FROM members WHERE username = "'.$_POST['username'].'"');
+		$row = mysql_fetch_array($stmt);
 
 		if(!empty($row['username'])){
 			$error[] = 'Username provided is already in use.';
@@ -36,9 +35,8 @@ if(isset($_POST['submit'])){
 	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 	    $error[] = 'Please enter a valid email address';
 	} else {
-		$stmt = $db->prepare('SELECT email FROM members WHERE email = :email');
-		$stmt->execute(array(':email' => $_POST['email']));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$stmt = mysql_query('SELECT email FROM members WHERE email = "'.$_POST['email'].'"');
+		$row = mysql_fetch_array($stmt);
 
 		if(!empty($row['email'])){
 			$error[] = 'Email provided is already in use.';
@@ -61,14 +59,9 @@ if(isset($_POST['submit'])){
 		try {
 
 			//insert into database with a prepared statement
-			$stmt = $db->prepare('INSERT INTO members (username,password,email,active) VALUES (:username, :password, :email, :active)');
-			$stmt->execute(array(
-				':username' => $_POST['username'],
-				':password' => $hashedpassword,
-				':email' => $_POST['email'],
-				':active' => $activasion
-			));
-			$id = $db->lastInsertId('memberID');
+			$stmt = mysql_query('INSERT INTO members (username,password,email,active) VALUES ("'.$_POST['username'].'", "'.$hashedpassword.'", "'.$_POST['email'].'", "'.$activasion.'")');
+			
+			$id = mysql_insert_id();
 
 			//send email
 			$to = $_POST['email'];

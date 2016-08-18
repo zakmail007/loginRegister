@@ -5,37 +5,14 @@ class User extends Password{
     private $_db;
 	private $balls;
 
-    // function __construct($db){
-    	// parent::__construct();
-
-    	// $this->_db = $db;
-    // }
-
-	private function get_user_hash($username){
-
-		try {
-			$stmt = $this->_db->prepare('SELECT password, username, memberID FROM members WHERE username = :username AND active="Yes" ');
-			$stmt->execute(array('username' => $username));
-
-			return $stmt->fetch();
-
-		} catch(PDOException $e) {
-		    echo '<p class="bg-danger">'.$e->getMessage().'</p>';
-		}
-	}
 	
 	private function validate_user($username,$password){
+		
+		$stmt = mysql_query('SELECT password, username, memberID FROM members WHERE username = "'.$username.'" AND password = "'.$password.'" AND active="Yes" ');
+		$row = mysql_fetch_array($stmt);
 
-		try {
-			$stmt = $this->_db->prepare('SELECT password, username, memberID FROM members WHERE username = :username AND password = :password AND active="Yes" ');
-			$stmt->execute(array('username' => $username,
-				':password' => $password));
+		return $row;
 
-			return $stmt->fetch();
-
-		} catch(PDOException $e) {
-		    echo '<p class="bg-danger">'.$e->getMessage().'</p>';
-		}
 	}
 
 	public function login($username,$password){

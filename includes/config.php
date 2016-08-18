@@ -15,6 +15,15 @@ define('DBNAME','loginregister');
 define('DIR','http://10.77.200.36:84/loginregister');
 define('SITEEMAIL','noreply@domain.com');
 
+$link = mysql_connect(DBHOST, DBUSER, DBPASS);
+if (!$link) {
+    die('Could not connect: ' . mysql_error());
+}
+$db_selected = mysql_select_db(DBNAME, $link);
+if (!$db_selected) {
+    die ('Can\'t use DB : ' . mysql_error());
+}
+/*
 try {
 
 	//create PDO connection
@@ -26,9 +35,10 @@ try {
     echo '<p class="bg-danger">'.$e->getMessage().'</p>';
     exit;
 }
+*/
 
 //include the user class, pass in the database connection
 include('classes/user.php');
 include('classes/phpmailer/mail.php');
-$user = new User($db);
+$user = new User();
 ?>
