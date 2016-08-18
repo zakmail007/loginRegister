@@ -22,7 +22,7 @@
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/> 
   <echo message="build file from"/>
-  <zip destfile="${filename}.zip" basedir="${folder-to-zip}"/>  
+  <zip destfile="./${filename}.zip" basedir="${folder-to-zip}"/>  
  </target>
  
  
