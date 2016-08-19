@@ -8,7 +8,7 @@
  <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
  <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
  <property name="folder-to-zip" value="/var/lib/jenkins/workspace/CaseStudyBuildAnt" /> 
- <property name="base-dir" value="/var/lib/jenkins/workspace/" />
+ <property name="base-dir" value="/CaseStudy/Ansible-workspace/" />
  <property name="filename" value="CaseStudyBuildzip" />
  
 
@@ -21,7 +21,7 @@
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/> 
-  <echo message="Zip file building..."/>
+  <echo message="Zip file building in container..."/>
   <zip destfile="${base-dir}${filename}.zip" basedir="${folder-to-zip}"/>  
  </target>
  
