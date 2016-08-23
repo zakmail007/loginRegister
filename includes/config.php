@@ -6,13 +6,21 @@ session_start();
 date_default_timezone_set('Europe/London');
 
 //database credentials
+
 define('DBHOST','localhost');
 define('DBUSER','root');
 define('DBPASS','');
 define('DBNAME','loginregister');
+/*
+define('DBHOST','172.17.0.2');
+define('DBUSER','root');
+define('DBPASS','root');
+define('DBNAME','loginregister');
+*/
 
 //application address
 define('DIR','http://10.77.200.36:84/loginregister');
+//define('DIR','http://10.80.34.126:4468');
 define('SITEEMAIL','noreply@domain.com');
 
 $link = mysql_connect(DBHOST, DBUSER, DBPASS);
