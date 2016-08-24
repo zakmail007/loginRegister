@@ -13,7 +13,7 @@
  
 
  <target name="all" depends="clean,prepare,phpunit" description="Clean build and dist directories, then compile"/>
- </target>
+ 
  <target name="clean"
          unless="clean.done"
          description="Cleanup build artifacts">
