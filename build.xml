@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="loginRegister" basedir="." default="clean">
+<project name="loginRegister" basedir="." default="all">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="pdepend" value="/home/jenkins/vendor/bin/pdepend"/>
  <property name="phpcpd"  value="/home/jenkins/vendor/bin/phpcpd"/>
@@ -12,7 +12,8 @@
  <property name="filename" value="CaseStudyBuildzip" />
  
 
-
+ <target name="all" depends="clean,prepare,phpunit" description="Clean build and dist directories, then compile"/>
+ </target>
  <target name="clean"
          unless="clean.done"
          description="Cleanup build artifacts">
