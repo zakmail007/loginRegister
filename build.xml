@@ -46,7 +46,6 @@
 
    <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
-    <modified />
    </fileset> 
   </apply>
 
