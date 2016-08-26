@@ -46,18 +46,12 @@
 
    <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
-   </fileset> 
-   <modified />
+   </fileset>
   </apply>
 
   <property name="lint.done" value="true"/>
  </target>
  
- <target name="lintdone" depends="lint" if="lint.done">
-  <fail message="Erros PHP Files" />
- </target>
-
-
  <target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
