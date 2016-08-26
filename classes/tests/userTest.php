@@ -17,8 +17,8 @@ class UserTest extends PHPUnit_Framework_TestCase{
     }
 	public function testPassLength()
     {
-        $this->testValue->passLength('zrr');
-		$this->assertTrue($this->testValue->passLength('zx'));
+        $this->testValue->passLength('zr');
+		$this->assertTrue($this->testValue->passLength('zxx'));
     }
 	public function testPassMatch()
     {
