@@ -22,7 +22,7 @@
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/> 
-  <echo message="Zip file building in container..."/>
+  <echo message="${basedir} Zip file building in container..."/>
   <zip destfile="${base-dir}${filename}.zip" basedir="${folder-to-zip}"/>  
  </target>
  
@@ -38,6 +38,18 @@
   <property name="prepare.done" value="true"/>
  </target>
 
+ <target name="phpunit"
+         unless="phpunit.done"
+         depends="prepare"
+         description="Run unit tests with PHPUnit">
+  <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+   <arg value="--configuration"/>
+   <arg path="${basedir}/build/phpunit.xml"/>
+  </exec>
+
+  <property name="phpunit.done" value="true"/>
+ </target>
+ 
  <target name="-check-failure">
   <fail message="PHPUnit did not finish successfully">
    <condition>
