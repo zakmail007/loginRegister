@@ -12,7 +12,7 @@
  <property name="filename" value="CaseStudyBuildzip" />
  
 
- <target name="all" depends="clean,prepare" description="Clean build and dist directories, then compile"/>
+ <target name="all" depends="clean,prepare,phpunit" description="Clean build and dist directories, then compile"/>
  
  <target name="clean"
          unless="clean.done"
