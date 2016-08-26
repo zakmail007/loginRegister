@@ -47,12 +47,7 @@
    <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
     <modified />
-   </fileset>
-   <fail message="Erros PHP Files">
-    <condition>
-     <resourcecount refid="fileset.test" when="gt" count="0"></resourcecount>
-    </condition>
-   </fail>
+   </fileset>  
 
    <fileset dir="${basedir}/classes/tests/">
     <include name="**/*.php" />
@@ -62,6 +57,11 @@
 
   <property name="lint.done" value="true"/>
  </target>
+   <fail message="Erros PHP Files">
+    <condition>
+     <resourcecount refid="fileset.test" when="gt" count="0"></resourcecount>
+    </condition>
+   </fail>
 
 
  <target name="phpunit"
