@@ -47,12 +47,7 @@
    <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
     <modified />
-   </fileset>  
-
-   <fileset dir="${basedir}/classes/tests/">
-    <include name="**/*.php" />
-    <modified />
-   </fileset>
+   </fileset> 
   </apply>
 
   <property name="lint.done" value="true"/>
