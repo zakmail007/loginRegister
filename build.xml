@@ -44,10 +44,15 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="${basedir}">
+   <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
     <modified />
    </fileset>
+   <fail message="Erros PHP Files">
+    <condition>
+     <resourcecount refid="fileset.test" when="gt" count="0"></resourcecount>
+    </condition>
+   </fail>
 
    <fileset dir="${basedir}/classes/tests/">
     <include name="**/*.php" />
