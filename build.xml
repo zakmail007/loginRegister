@@ -43,7 +43,7 @@
          depends="prepare"
          description="Run unit tests with PHPUnit">
   <exec executable="${phpunit}" failonerror="true" dir="${basedir}/classes/tests/" resultproperty="result.phpunit">
-   <arg line="phpunit ${basedir}/classes/tests/UnitTest.xml ${basedir}/classes/tests/userTest.php" />
+   <arg line="UserTest ${basedir}/classes/tests/userTest.php" />
    <arg value="--configuration"/>
    <arg path="${basedir}/classes/tests/UnitTest.xml"/>
   </exec>
