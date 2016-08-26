@@ -6,7 +6,7 @@
  <property name="phpcs"   value="/home/jenkins/vendor/bin/phpcs"/>
  <property name="phploc"  value="/home/jenkins/vendor/bin/phploc"/>
  <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
- <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
+ <property name="phpunit" value="/usr/bin/phpunit"/>
  <property name="folder-to-zip" value="/var/lib/jenkins/workspace/CaseStudyBuildAnt" /> 
  <property name="base-dir" value="/var/lib/jenkins/workspace/" />
  <property name="filename" value="CaseStudyBuildzip" />
