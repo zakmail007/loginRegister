@@ -51,7 +51,13 @@
 
   <property name="lint.done" value="true"/>
  </target>
- <fail message="Something wrong here."/>
+  <fail>
+     <condition>
+       <not>
+         <isset property="lint.done"/>
+       </not>
+     </condition>
+   </fail>
  <target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
