@@ -46,7 +46,8 @@
 
    <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
-   </fileset>
+   </fileset> 
+   <modified />
   </apply>
 
   <property name="lint.done" value="true"/>
