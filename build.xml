@@ -12,7 +12,7 @@
  <property name="filename" value="CaseStudyBuildzip" />
  
 
- <target name="all" depends="clean,prepare,phpunit,lint" description="Clean build and dist directories, then compile"/>
+ <target name="all" depends="clean,prepare,phpunit,lint,lintdone" description="Clean build and dist directories, then compile"/>
  
  <target name="clean"
          unless="clean.done"
@@ -46,7 +46,6 @@
 
    <fileset id="fileset.test" dir="${basedir}">
     <include name="**/*.php" />
-    <modified />
    </fileset>  
 
    <fileset dir="${basedir}/classes/tests/">
@@ -58,7 +57,7 @@
   <property name="lint.done" value="true"/>
  </target>
  
- <target name="lintdone" if="lint.done">
+ <target name="lintdone" depends="lint" if="lint.done">
   <fail message="Erros PHP Files" />
  </target>
 
