@@ -57,11 +57,7 @@
 
   <property name="lint.done" value="true"/>
  </target>
-   <fail message="Erros PHP Files">
-    <condition>
-     <resourcecount refid="fileset.test" when="gt" count="0"></resourcecount>
-    </condition>
-   </fail>
+   <fail if="lint.done" message="Erros PHP Files" />
 
 
  <target name="phpunit"
