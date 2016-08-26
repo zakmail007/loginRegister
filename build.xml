@@ -44,10 +44,10 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset id="fileset.test" dir="${basedir}">
+   <fileset dir="${basedir}">
     <include name="**/*.php" />
     <modified />
-   </fileset>  
+   </fileset>
 
    <fileset dir="${basedir}/classes/tests/">
     <include name="**/*.php" />
@@ -57,7 +57,6 @@
 
   <property name="lint.done" value="true"/>
  </target>
- <fail if="lint.done" message="Erros PHP Files" />
 
 
  <target name="phpunit"
