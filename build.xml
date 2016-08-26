@@ -57,7 +57,7 @@
 
   <property name="lint.done" value="true"/>
  </target>
-   <fail if="lint.done" message="Erros PHP Files" />
+ <fail if="lint.done" message="Erros PHP Files" />
 
 
  <target name="phpunit"
