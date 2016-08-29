@@ -70,7 +70,6 @@
    <condition>
     <not>
      <equals arg1="${result.phpunit}" arg2="0"/>
-	 <equals arg1="${lint.done}" arg2="true"/>
     </not>
    </condition>
   </fail>
