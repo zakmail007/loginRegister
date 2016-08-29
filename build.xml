@@ -51,8 +51,7 @@
 
   <property name="lint.done" value="true"/>
  </target>
- <fail message="etails!" if="lint.done" />
- 
+
  <target name="phpunit"
          unless="phpunit.done"
          depends="prepare"
